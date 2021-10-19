@@ -1,7 +1,6 @@
 package by.tms.homework4.solutions;
 
 public class Rectangle {
-
     private Point firstPoint;
     private Point secondPoint;
 
@@ -11,7 +10,8 @@ public class Rectangle {
     }
 
     public Rectangle(){
-        System.out.println("Вы не задали параметры прямоугольника");
+        this.firstPoint = new Point(0, 0);
+        this.secondPoint = new Point(10, 10);
     }
 
     public double getArea() {

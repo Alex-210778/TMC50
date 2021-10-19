@@ -1,7 +1,6 @@
 package by.tms.homework4.solutions;
 
 public class Point {
-
     private double x;
     private double y;
 
