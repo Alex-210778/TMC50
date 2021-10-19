@@ -13,7 +13,6 @@ public class Task2 {
     public static int fromRomeNumberInArabic(String number) {
         int[] array = new int[number.length()];
         int result = 0;
-
         for (int i = 0; i < number.length(); i++) {
             switch (number.charAt(i)) {
                 case 'M':
@@ -41,14 +40,15 @@ public class Task2 {
                     return -1;
             }
         }
-
         for (int i = 0; i < array.length; i++) {
             if (i == array.length - 1) {
                 result += array[i];
             } else if (array[i] < array[i + 1]) {
                 result = result + (array[i + 1] - array[i]);
                 i += 1;
-            } else result += array[i];
+            } else {
+                result += array[i];
+            }
         }
         return result;
     }

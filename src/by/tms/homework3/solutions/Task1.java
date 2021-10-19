@@ -10,14 +10,11 @@ public class Task1 {
         return scanner.nextLine();
     }
 
-    public static void isPalindrom(String str) {
+    public static boolean isPalindrom(String str) {
         if (str != null) {
             str = str.replaceAll("[!?.,:;\\s]", "");
-            if (str.equalsIgnoreCase(new StringBuilder(str).reverse().toString())) {
-                System.out.println("Введённая строка является палиндромом");
-            } else {
-                System.out.println("Введённая строка не является палиндромом");
-            }
+            return str.equalsIgnoreCase(new StringBuilder(str).reverse().toString());
         }
+        return false;
     }
 }
