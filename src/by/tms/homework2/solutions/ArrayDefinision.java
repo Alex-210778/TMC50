@@ -9,7 +9,6 @@ public class ArrayDefinision {
        System.out.println("Введите длину массива: ");
        int arrayLength = scanner.nextInt();
        int[] array = new int[arrayLength];
-
        for (int i = 0; i < array.length; i++) {
            Scanner scanner1 = new Scanner(System.in);
            System.out.println("Введите " + i + " элемент массива: ");
@@ -22,18 +21,13 @@ public class ArrayDefinision {
        Scanner scanner = new Scanner(System.in);
        System.out.println("Введите количество строк двумерного массива: ");
        int rows = scanner.nextInt();
-
        Scanner scanner1 = new Scanner(System.in);
        System.out.println("Введите количество столбцов двумерного массива: ");
        int columns = scanner1.nextInt();
-
        int[][] twoDimensionalArray = new int[rows][columns];
-
        System.out.println("Исходный двумерный массив: ");
-
-
        for (int i = 0; i < twoDimensionalArray.length; i++) {
-           for (int j = 0; j < twoDimensionalArray[0].length; j++) {
+           for (int j = 0; j < twoDimensionalArray[i].length; j++) {
                twoDimensionalArray[i][j] = (int)(Math.random() * 100);
                System.out.print(twoDimensionalArray[i][j] + " ");
            }

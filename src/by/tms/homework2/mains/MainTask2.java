@@ -8,7 +8,6 @@ import java.util.Arrays;
 public class MainTask2 {
 
     public static void main(String[] args) {
-
         int[] array = ArrayDefinision.getArray();
         System.out.println("Задан массив: " + Arrays.toString(array));
         System.out.println("Массив, в котором все повторяющие элементы удалены: " + Arrays.toString(Task2.getArrayRemovesIdenticalElements(array)));

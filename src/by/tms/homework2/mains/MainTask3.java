@@ -8,7 +8,6 @@ import java.util.Arrays;
 public class MainTask3 {
 
     public static void main(String[] args) {
-
         int[] array1 = ArrayDefinision.getArray();
         int[] array2 = ArrayDefinision.getArray();
         System.out.println("Задан массив 1: " + Arrays.toString(array1));

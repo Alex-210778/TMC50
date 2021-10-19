@@ -8,7 +8,6 @@ import java.util.Arrays;
 public class MainTask4 {
 
     public static void main(String[] args) {
-
         int[][] twoDimensionalArray = ArrayDefinision.getTwoDimensionalArray();
         System.out.println("Полученный одномерный массив:");
         System.out.println(Arrays.toString(Task4.linearize(twoDimensionalArray)));
