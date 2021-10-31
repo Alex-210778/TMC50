@@ -1,7 +1,6 @@
 package by.tms.homework5.figures;
 
 public abstract class Figure{
-
     protected Point coordinatePoint;
     protected String figureName;
 
@@ -9,7 +8,7 @@ public abstract class Figure{
         this.coordinatePoint = coordinatePoint;
     }
 
-    protected abstract double getArea();
+    public abstract double getArea();
 
     public Point getCoordinatePoint() {
         return coordinatePoint;

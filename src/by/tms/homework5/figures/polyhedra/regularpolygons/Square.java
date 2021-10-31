@@ -30,8 +30,5 @@ public class Square extends PolygonRegular implements IDistance {
                 ", количество сторон = " + numberOfPolygonFaces +
                '}';
     }
-
-
-
 }
 

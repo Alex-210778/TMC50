@@ -1,8 +1,6 @@
 package by.tms.homework5.figures.polyhedra.regularpolygons;
 
 import by.tms.homework5.figures.Point;
-import by.tms.homework5.interfeices.IDistance;
-import by.tms.homework5.interfeices.IHeight;
 
 public class AnyPolygonRegular extends PolygonRegular {
 

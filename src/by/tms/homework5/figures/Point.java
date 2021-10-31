@@ -1,7 +1,6 @@
 package by.tms.homework5.figures;
 
 public class Point {
-
     private double coordinateX;
     private double coordinateY;
 

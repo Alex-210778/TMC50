@@ -1,98 +1,127 @@
 package by.tms.homework5;
 
 import by.tms.homework5.figures.Point;
+import by.tms.homework5.figures.ShapeUtils;
 import by.tms.homework5.figures.circles.Circle;
 import by.tms.homework5.figures.circles.Ellipse;
-import by.tms.homework5.figures.polyhedra.Polihendron;
+import by.tms.homework5.figures.polyhedra.Parallelogram;
+import by.tms.homework5.figures.polyhedra.Trapezoid;
 import by.tms.homework5.figures.polyhedra.Triangle;
 import by.tms.homework5.figures.polyhedra.regularpolygons.*;
 
 public class Main {
 
     public static void main(String[] args) {
-
         Point point = new Point(5, 5);
-        Point pointB = new Point(20, 10);
-
         TriangleEquilateral polygonRegular = new TriangleEquilateral(point, 20);
         System.out.println(polygonRegular.toString());
-        System.out.println("Радиус  описанной окружности - " + polygonRegular.getRadiusCircumscribedCircle());
-        System.out.println("Радиус вписанной окружности - " + polygonRegular.getRadiusInscribedCircle());
-        System.out.println("Длина стороны - " + polygonRegular.getLenghtOfSide());
-        System.out.println("Внутренний угол - " + polygonRegular.getAngleOfPoligon());
-        System.out.println("Площадь - " + polygonRegular.getArea());
-        System.out.println("Периметр - " + polygonRegular.getPerimetr());
-        System.out.println("Высота - " + polygonRegular.getHeight());
-
+        System.out.printf("Радиус  описанной окружности - %.3f%n", polygonRegular.getRadiusCircumscribedCircle());
+        System.out.printf("Радиус вписанной окружности - %.3f%n", polygonRegular.getRadiusInscribedCircle());
+        System.out.printf("Длина стороны - %.3f%n", polygonRegular.getLenghtOfSide());
+        System.out.printf("Внутренний угол - %.3f%n", polygonRegular.getAngleOfPoligon());
+        System.out.printf("Площадь - %.3f%n", polygonRegular.getArea());
+        System.out.printf("Периметр - %.3f%n", polygonRegular.getPerimetr());
+        System.out.printf("Высота - %.3f%n", polygonRegular.getHeight());
+        System.out.println();
         Square square = new Square(point, 20);
         System.out.println(square.toString());
-        System.out.println("Радиус  описанной окружности - " + square.getRadiusCircumscribedCircle());
-        System.out.println("Радиус вписанной окружности - " + square.getRadiusInscribedCircle());
-        System.out.println("Длина стороны - " + square.getLenghtOfSide());
-        System.out.println("Внутренний угол - " + square.getAngleOfPoligon());
-        System.out.println("Площадь - " + square.getArea());
-        System.out.println("Периметр - " + square.getPerimetr());
-        System.out.println("Диагональ - " + square.getDistance());
-
+        System.out.printf("Радиус  описанной окружности - %.3f%n", square.getRadiusCircumscribedCircle());
+        System.out.printf("Радиус вписанной окружности - %.3f%n", square.getRadiusInscribedCircle());
+        System.out.printf("Длина стороны - %.3f%n", square.getLenghtOfSide());
+        System.out.printf("Внутренний угол - %.3f%n", square.getAngleOfPoligon());
+        System.out.printf("Площадь - %.3f%n", square.getArea());
+        System.out.printf("Периметр - %.3f%n", square.getPerimetr());
+        System.out.printf("Диагональ - %.3f%n", square.getDistance());
+        System.out.println();
         PentagonRegular pentagonRegular = new PentagonRegular(point, 20);
         System.out.println(pentagonRegular.toString());
-        System.out.println("Радиус  описанной окружности - " + pentagonRegular.getRadiusCircumscribedCircle());
-        System.out.println("Радиус вписанной окружности - " + pentagonRegular.getRadiusInscribedCircle());
-        System.out.println("Длина стороны - " + pentagonRegular.getLenghtOfSide());
-        System.out.println("Внутренний угол - " + pentagonRegular.getAngleOfPoligon());
-        System.out.println("Площадь - " + pentagonRegular.getArea());
-        System.out.println("Периметр - " + pentagonRegular.getPerimetr());
-        System.out.println("Диагональ - " + pentagonRegular.getDistance());
-        System.out.println("Высота - " + pentagonRegular.getHeight());
-
+        System.out.printf("Радиус  описанной окружности - %.3f%n", pentagonRegular.getRadiusCircumscribedCircle());
+        System.out.printf("Радиус вписанной окружности - %.3f%n", pentagonRegular.getRadiusInscribedCircle());
+        System.out.printf("Длина стороны - %.3f%n", pentagonRegular.getLenghtOfSide());
+        System.out.printf("Внутренний угол - %.3f%n", pentagonRegular.getAngleOfPoligon());
+        System.out.printf("Площадь - %.3f%n", pentagonRegular.getArea());
+        System.out.printf("Периметр - %.3f%n", pentagonRegular.getPerimetr());
+        System.out.printf("Диагональ - %.3f%n", pentagonRegular.getDistance());
+        System.out.printf("Высота - %.3f%n", pentagonRegular.getHeight());
+        System.out.println();
         HexagonRegular hexagonRegular = new HexagonRegular(point, 20);
         System.out.println(hexagonRegular.toString());
-        System.out.println("Радиус  описанной окружности - " + hexagonRegular.getRadiusCircumscribedCircle());
-        System.out.println("Радиус вписанной окружности - " + hexagonRegular.getRadiusInscribedCircle());
-        System.out.println("Длина стороны - " + hexagonRegular.getLenghtOfSide());
-        System.out.println("Внутренний угол - " + hexagonRegular.getAngleOfPoligon());
-        System.out.println("Площадь - " + hexagonRegular.getArea());
-        System.out.println("Периметр - " + hexagonRegular.getPerimetr());
-        System.out.println("Диагональ - " + hexagonRegular.getDistance());
-
+        System.out.printf("Радиус  описанной окружности - %.3f%n", hexagonRegular.getRadiusCircumscribedCircle());
+        System.out.printf("Радиус вписанной окружности - %.3f%n", hexagonRegular.getRadiusInscribedCircle());
+        System.out.printf("Длина стороны - %.3f%n", hexagonRegular.getLenghtOfSide());
+        System.out.printf("Внутренний угол - %.3f%n", hexagonRegular.getAngleOfPoligon());
+        System.out.printf("Площадь - %.3f%n", hexagonRegular.getArea());
+        System.out.printf("Периметр - %.3f%n", hexagonRegular.getPerimetr());
+        System.out.printf("Диагональ - %.3f%n", hexagonRegular.getDistance());
+        System.out.println();
         AnyPolygonRegular anyPolygonRegular = new AnyPolygonRegular(point, 20, 9);
         System.out.println(anyPolygonRegular.toString());
-        System.out.println("Радиус  описанной окружности - " + anyPolygonRegular.getRadiusCircumscribedCircle());
-        System.out.println("Радиус вписанной окружности - " + anyPolygonRegular.getRadiusInscribedCircle());
-        System.out.println("Длина стороны - " + anyPolygonRegular.getLenghtOfSide());
-        System.out.println("Внутренний угол - " + anyPolygonRegular.getAngleOfPoligon());
-        System.out.println("Площадь - " + anyPolygonRegular.getArea());
-        System.out.println("Периметр - " + anyPolygonRegular.getPerimetr());
-
+        System.out.printf("Радиус  описанной окружности - %.3f%n", anyPolygonRegular.getRadiusCircumscribedCircle());
+        System.out.printf("Радиус вписанной окружности - %.3f%n", anyPolygonRegular.getRadiusInscribedCircle());
+        System.out.printf("Длина стороны - %.3f%n", anyPolygonRegular.getLenghtOfSide());
+        System.out.printf("Внутренний угол - %.3f%n", anyPolygonRegular.getAngleOfPoligon());
+        System.out.printf("Площадь - %.3f%n", anyPolygonRegular.getArea());
+        System.out.printf("Периметр - %.3f%n", anyPolygonRegular.getPerimetr());
+        System.out.println();
         Circle circle = new Circle(point, 20);
         System.out.println(circle.toString());
-        System.out.println("Площадь - " + circle.getArea());
-        System.out.println("Длина дуги - " + circle.getLenghtOfCircle());
-        System.out.println("Площадь сектора - " + circle.getAreaOfSector(90));
-        System.out.println("Длина дуги сектора - " + circle.getLenghtOfSectorArc(90));
-
+        System.out.printf("Площадь - %.3f%n", circle.getArea());
+        System.out.printf("Длина дуги - %.3f%n", circle.getLenghtOfCircle());
+        System.out.printf("Площадь сектора - %.3f%n", circle.getAreaOfSector(90));
+        System.out.printf("Длина дуги сектора - %.3f%n", circle.getLenghtOfSectorArc(90));
+        System.out.println();
         Ellipse ellipse = new Ellipse(point, 2, 4);
         System.out.println(ellipse.toString());
-        System.out.println("Площадь - " + ellipse.getArea());
-        System.out.println("Периметр - " + ellipse.getPerimetrOfEllipse());
-
-
-        Triangle triangle = new Triangle(point, pointB, 30, 80);
-
-
+        System.out.printf("Площадь - %.3f%n", ellipse.getArea());
+        System.out.printf("Периметр - %.3f%n", ellipse.getPerimetrOfEllipse());
+        System.out.println();
+        Triangle triangle = new Triangle(point, 20, 30, 80);
         System.out.println(triangle.toString());
-
-        System.out.println("Длина стороны a = " + triangle.getLengthOfSideA());
-        System.out.println("Длина стороны b = " + triangle.getLengthOfSideB());
-        System.out.println("Длина стороны c = " + triangle.getLengthOfSideC());
-
-        System.out.println("Периметр - " + triangle.getPerimetr());
-        System.out.println("Высота - " + triangle.getHeight());
-
-        System.out.println("Угол альфа - " + triangle.getAngleAlfa());
-        System.out.println("Угол бетта - " + triangle.getAngleBetta());
-        System.out.println("Угол гамма - " + triangle.getAngleGamma());
-
-
+        System.out.printf("Длина стороны a - %.3f%n", triangle.getLengthOfSideA());
+        System.out.printf("Длина стороны b - %.3f%n", triangle.getLengthOfSideB());
+        System.out.printf("Длина стороны c - %.3f%n", triangle.getLengthOfSideC());
+        System.out.printf("Угол альфа - %.3f%n", triangle.getAngleAlfa());
+        System.out.printf("Угол бетта - %.3f%n", triangle.getAngleBetta());
+        System.out.printf("Угол гамма - %.3f%n", triangle.getAngleGamma());
+        System.out.printf("Периметр - %.3f%n", triangle.getPerimetr());
+        System.out.printf("Высота - %.3f%n", triangle.getHeight());
+        System.out.printf("Площадь - %.3f%n", triangle.getArea());
+        System.out.println();
+        Parallelogram parallelogram = new Parallelogram(point, 50, 30, 115);
+        System.out.println(parallelogram.toString());
+        System.out.printf("Длина стороны a - %.3f%n", parallelogram.getLengthOfSideA());
+        System.out.printf("Длина стороны b - %.3f%n", parallelogram.getLengthOfSideB());
+        System.out.printf("Угол альфа - %.3f%n", parallelogram.getAngleAlfa());
+        System.out.printf("Угол бетта - %.3f%n", parallelogram.getAngleBetta());
+        System.out.printf("Диагональ - %.3f%n", parallelogram.getDistance());
+        System.out.printf("Периметр - %.3f%n", parallelogram.getPerimetr());
+        System.out.printf("Высота - %.3f%n", parallelogram.getHeight());
+        System.out.printf("Площадь - %.3f%n", parallelogram.getArea());
+        System.out.println();
+        Trapezoid trapezoid = new Trapezoid(point, 80, 50, 55, 80);
+        System.out.println(trapezoid);
+        System.out.printf("Длина стороны a - %.3f%n", trapezoid.getLengthOfSideA());
+        System.out.printf("Длина стороны b - %.3f%n", trapezoid.getLengthOfSideB());
+        System.out.printf("Длина стороны c - %.3f%n", trapezoid.getlengthOfSideC());
+        System.out.printf("Длина стороны d - %.3f%n", trapezoid.getlengthOfSideD());
+        System.out.printf("Угол альфа - %.3f%n", trapezoid.getAngleAlfa());
+        System.out.printf("Угол бетта - %.3f%n", trapezoid.getAngleBetta());
+        System.out.printf("Угол гамма - %.3f%n", trapezoid.getAngleGamma());
+        System.out.printf("Угол дельта - %.3f%n", trapezoid.getAngleDelta());
+        System.out.printf("Периметр - %.3f%n", trapezoid.getPerimetr());
+        System.out.printf("Средняя линия  - %.3f%n", trapezoid.getlengthOfMiddleLine());
+        System.out.printf("Высота - %.3f%n", trapezoid.getHeight());
+        System.out.printf("Площадь - %.3f%n", trapezoid.getArea());
+        System.out.println();
+        Parallelogram parallelogram1 = new Parallelogram(point, 50, 20, 90);
+        Parallelogram parallelogram2 = new Parallelogram(point, 25, 40, 90);
+        System.out.println(pentagonRegular.isEqualsArea(triangle));
+        System.out.println(parallelogram1.isEqualsArea(parallelogram2));
+        System.out.println();
+        System.out.println(ShapeUtils.isRectangle(4, 90));
+        System.out.println(ShapeUtils.isRectangle(4, 89));
+        System.out.println();
+        System.out.println(ShapeUtils.isTriangle(3));
+        System.out.println(ShapeUtils.isTriangle(12));
     }
 }

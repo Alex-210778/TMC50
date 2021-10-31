@@ -5,38 +5,44 @@ import by.tms.homework5.figures.Point;
 import by.tms.homework5.interfeices.IEqualsArea;
 import by.tms.homework5.interfeices.IHeight;
 
-public class Triangle extends Figure implements IHeight, IEqualsArea {
-    private double lengthOfSideA;   //Длина стороны a
+public class Trapezoid extends Figure implements IHeight, IEqualsArea {
+    private double lengthOfSideA;   //Длина основания стороны a
     private double lengthOfSideB;   //Длина стороны b
     private double angleAlfa;       //Угол между сторонами a и b
+    private double angleBetta;       //Угол между сторонами a и c
 
-    public Triangle(Point coordinatePoint, double lengthOfSideA, double lengthOfSideB, double angleAlfa) {
+    public Trapezoid(Point coordinatePoint, double lengthOfSideA, double lengthOfSideB, double angleAlfa, double angleBetta) {
         super(coordinatePoint);
         this.lengthOfSideA = lengthOfSideA;
         this.lengthOfSideB = lengthOfSideB;
         this.angleAlfa = angleAlfa;
-        if (angleAlfa == 90) {
-            this.figureName = "Прямоугольный треугольник";
-        } else {
-            this.figureName = "Треугольник";
-        }
-    }
-
-    public double getLengthOfSideC() {
-        return Math.sqrt(Math.pow(lengthOfSideA, 2) + Math.pow(lengthOfSideB, 2) -
-                2 * lengthOfSideA * lengthOfSideB * Math.cos(Math.toRadians(angleAlfa)));
-    }
-
-    public double getAngleBetta() {
-        return Math.toDegrees(Math.asin(lengthOfSideB * Math.sin(Math.toRadians(angleAlfa)) / getLengthOfSideC()));
+        this.angleBetta = angleBetta;
+        this.figureName = "Трапеция";
     }
 
     public double getAngleGamma() {
-        return 180 - angleAlfa - getAngleBetta();
+        return 180 - angleBetta;
+    }
+
+    public double getAngleDelta() {
+        return 180 - angleAlfa;
+    }
+
+    public double getlengthOfSideC() {
+        return getHeight() / Math.sin(Math.toRadians(angleBetta));
+    }
+
+    public double getlengthOfSideD() {
+        return lengthOfSideA - lengthOfSideB * Math.cos(Math.toRadians(angleAlfa)) -
+                getlengthOfSideC() * Math.cos(Math.toRadians(angleBetta));
     }
 
     public double getPerimetr() {
-        return lengthOfSideA + lengthOfSideB + getLengthOfSideC();
+        return lengthOfSideA + lengthOfSideB + getlengthOfSideC() + getlengthOfSideD();
+    }
+
+    public double getlengthOfMiddleLine() {
+        return (lengthOfSideA + getlengthOfSideD()) / 2;
     }
 
     @Override
@@ -50,14 +56,12 @@ public class Triangle extends Figure implements IHeight, IEqualsArea {
 
     @Override
     public double getHeight() {
-        double semiPerimetr = getPerimetr() / 2;
-        return 2 * Math.sqrt(semiPerimetr * (semiPerimetr - getLengthOfSideA()) *
-                (semiPerimetr - getLengthOfSideB()) * (semiPerimetr - getLengthOfSideC())) / getLengthOfSideC();
+        return lengthOfSideB * Math.sin(Math.toRadians(angleAlfa));
     }
 
     @Override
     public double getArea() {
-        return getHeight() * getLengthOfSideC() / 2;
+        return getHeight() * getlengthOfMiddleLine();
     }
 
     public double getLengthOfSideA() {
@@ -84,14 +88,23 @@ public class Triangle extends Figure implements IHeight, IEqualsArea {
         this.angleAlfa = angleAlfa;
     }
 
+    public double getAngleBetta() {
+        return angleBetta;
+    }
+
+    public void setAngleBetta(double angleBetta) {
+        this.angleBetta = angleBetta;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Triangle triangle = (Triangle) o;
-        if (Double.compare(triangle.lengthOfSideA, lengthOfSideA) != 0) return false;
-        if (Double.compare(triangle.lengthOfSideB, lengthOfSideB) != 0) return false;
-        return Double.compare(triangle.angleAlfa, angleAlfa) == 0;
+        Trapezoid trapezoid = (Trapezoid) o;
+        if (Double.compare(trapezoid.lengthOfSideA, lengthOfSideA) != 0) return false;
+        if (Double.compare(trapezoid.lengthOfSideB, lengthOfSideB) != 0) return false;
+        if (Double.compare(trapezoid.angleAlfa, angleAlfa) != 0) return false;
+        return Double.compare(trapezoid.angleBetta, angleBetta) == 0;
     }
 
     @Override
@@ -104,12 +117,14 @@ public class Triangle extends Figure implements IHeight, IEqualsArea {
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(angleAlfa);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(angleBetta);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
 
     @Override
     public String toString() {
-        return "Треугольник{" +
+        return "Параллелограмм{" +
                 "координаты точки А = " + coordinatePoint +
                 ", длина стороны a = " + lengthOfSideA +
                 ", длина стороны b = " + lengthOfSideB +

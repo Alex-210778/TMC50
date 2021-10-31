@@ -2,9 +2,9 @@ package by.tms.homework5.figures.circles;
 
 import by.tms.homework5.figures.Figure;
 import by.tms.homework5.figures.Point;
+import by.tms.homework5.interfeices.IEqualsArea;
 
-public class Circle extends Figure {
-
+public class Circle extends Figure implements IEqualsArea {
     private double radius;
 
     public Circle(Point coordinatePoint, double radius) {
@@ -38,6 +38,28 @@ public class Circle extends Figure {
         return Math.PI * Math.pow(radius, 2);
     }
 
+    @Override
+    public boolean isEqualsArea (Figure figure) {
+        if (this.getArea() == figure.getArea()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Circle circle = (Circle) o;
+        return Double.compare(circle.radius, radius) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        long temp = Double.doubleToLongBits(radius);
+        return (int) (temp ^ (temp >>> 32));
+    }
 
     @Override
     public String toString() {
